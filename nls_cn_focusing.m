@@ -18,9 +18,9 @@ function nls_cn_focusing
     v  = 0.5;  % 0            % velocity; try e.g. 0.5 for a traveling soliton
     % psi = A * sech(A*(x - 0)) .* exp(1i*(0.5*v*x));  % good test field, bright soliton
     % psi = A * sin(v*x); % sin wave
-    % psi = A * exp(1i*v*x); % plane wave
-     noise_amp = 0.03;             % relative noise level
-     psi = A * (1 + noise_amp*(randn(size(x)) + 1i*randn(size(x)))); % unstable
+    % psi = A * exp(1i*v*x); % plane wave % unstable
+    noise_amp = 0.03;             % relative noise level
+    psi = A * (1 + noise_amp*(randn(size(x)) + 1i*randn(size(x)))); % unstable
 
     % ---------- Precompute discrete Laplacian (periodic) ----------
     e = ones(N,1);
